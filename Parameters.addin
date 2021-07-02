@@ -16,16 +16,7 @@
 	
 	
 	
-	<AddIn Type="Application">
-		<Name>Combine Parameters Win Forms</Name>
-		<Assembly>CombineParametersWinForm.dll</Assembly>
-		<AddInId>
-			5C1F4426-F7BE-42EF-9B8B-C4BD0FE8CD11
-		</AddInId>
-		<FullClassName>CombineParametersWinForm.ExternalApplication</FullClassName>
-		<VendorId>Vendor ID</VendorId>
-		<VendorDescription>Vendor Description</VendorDescription>
-	</AddIn>
+	
 
 	
 	
