@@ -9,17 +9,17 @@
 		<AddInId>
 			5C1F4426-F7BE-42EF-9B8B-C4BD0FE8CD91
 		</AddInId>
-		<FullClassName>CombineParametersWinForm.Form1</FullClassName>
+		<FullClassName>CombineParametersWinForm.Command</FullClassName>
 		<VendorId>Vendor ID</VendorId>
 		<VendorDescription>Vendor Description</VendorDescription>
 	</AddIn>
-	
-	
-	
-	
 
-	
-	
+
+
+
+
+
+
 
 
 </RevitAddIns>

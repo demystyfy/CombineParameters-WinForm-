@@ -40,7 +40,7 @@ namespace CombineParametersWinForm
             this.comboBox1.FormattingEnabled = true;
             this.comboBox1.Location = new System.Drawing.Point(32, 58);
             this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(121, 21);
+            this.comboBox1.Size = new System.Drawing.Size(279, 21);
             this.comboBox1.TabIndex = 0;
             // 
             // comboBox2
@@ -48,7 +48,7 @@ namespace CombineParametersWinForm
             this.comboBox2.FormattingEnabled = true;
             this.comboBox2.Location = new System.Drawing.Point(32, 102);
             this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(121, 21);
+            this.comboBox2.Size = new System.Drawing.Size(279, 21);
             this.comboBox2.TabIndex = 1;
             // 
             // comboBox3
@@ -56,12 +56,12 @@ namespace CombineParametersWinForm
             this.comboBox3.FormattingEnabled = true;
             this.comboBox3.Location = new System.Drawing.Point(32, 154);
             this.comboBox3.Name = "comboBox3";
-            this.comboBox3.Size = new System.Drawing.Size(121, 21);
+            this.comboBox3.Size = new System.Drawing.Size(279, 21);
             this.comboBox3.TabIndex = 2;
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(32, 209);
+            this.button1.Location = new System.Drawing.Point(112, 209);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(121, 23);
             this.button1.TabIndex = 3;
@@ -73,7 +73,7 @@ namespace CombineParametersWinForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(345, 316);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.comboBox3);
             this.Controls.Add(this.comboBox2);
