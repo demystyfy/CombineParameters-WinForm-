@@ -63,61 +63,133 @@ namespace CombineParametersWinForm
             {
                 //Get Parameter values
 
-                string parameterValue1 = duct.LookupParameter(comboBox1.Text).AsValueString();
-                string parameterValue2 = duct.LookupParameter(comboBox2.Text).AsValueString();
-                string parameterValue3 = duct.LookupParameter(comboBox3.Text).AsValueString();
+                Parameter parameter1 = duct.LookupParameter(comboBox1.Text);
+                Parameter parameter2 = duct.LookupParameter(comboBox2.Text);
+                Parameter parameter3 = duct.LookupParameter(comboBox3.Text);
+
+                //don't try reading a null value 
+
+                List<string> parameterValues = new List<string>();
 
 
-                List<string> listParam = new List<string> { parameterValue1, parameterValue2, parameterValue3 };
-                List<string> listCombosNotNull = new List<string>();
-                List<string> listChosen = new List<string>();
-
-                if (comboBox1.Text != "")
+                if (parameter1 != null)
                 {
-                    listCombosNotNull.Add(parameterValue1);
-                }
+                    string parameterValue1 = parameter1.AsString();
+                    //add parameter value into a list
 
-                if (comboBox2.Text != "")
-                {
-                    listCombosNotNull.Add(parameterValue2);
-                }
-
-                if (comboBox3.Text != "")
-                {
-                    listCombosNotNull.Add(parameterValue3); ;
+                    if (parameterValue1 != "") parameterValues.Add(parameterValue1);
+                   
+                    //  TaskDialog.Show("paramer1", parameterValue1);
                 }
 
 
-
-                foreach (string el in listCombosNotNull)
+                if (parameter2 != null)
                 {
+                    string parameterValue2 = parameter2.AsString();
+                    //add parameter value into a list
 
-                    if (listCombosNotNull.Contains(parameterValue1))
+                    if (parameterValue2 != "") parameterValues.Add(parameterValue2);
+
+                    //  TaskDialog.Show("paramer1", parameterValue1);
+                }
+
+
+
+                if (parameter3 != null)
+                {
+                    string parameterValue3 = parameter3.AsString();
+                    //add parameter value into a list
+
+                    if (parameterValue3 != "") parameterValues.Add(parameterValue3);
+
+                    //  TaskDialog.Show("paramer1", parameterValue1);
+                }
+
+
+
+                if (parameterValues.Count > 0) 
+                {
+                    //foreach(string s in parameterValues)
+                    //{
+
+                    //    TaskDialog.Show("REVI", s);
+                    //}
+
+                    string newValue = String.Join(" ,", parameterValues);
+
+                    using (Transaction t = new Transaction(revitDoc, "Set Parameter name"))
                     {
-                       listChosen.Add(el);
+                        t.Start();
+                        duct.LookupParameter("New").Set(newValue);
+                        t.Commit();
                     }
 
-
-                    if (listCombosNotNull.Contains(parameterValue2))
-                    {
-                        listChosen.Add(el);
-                    }
-
-                    if (listCombosNotNull.Contains(parameterValue3))
-                    {
-                        listChosen.Add(el);
-                    }
-
                 }
 
-                string newValue = String.Join(" ,", listChosen);
 
-                using (Transaction t = new Transaction(revitDoc, "Set Parameter name"))
-                {
-                    t.Start();
-                    duct.LookupParameter("New").Set(newValue);
-                    t.Commit();
-                }
+
+
+
+
+
+
+
+
+
+
+
+
+
+                //List<string> listParam = new List<string> { parameterValue1, parameterValue2, parameterValue3 };
+                //List<string> listCombosNotNull = new List<string>();
+                //List<string> listChosen = new List<string>();
+
+                //if (comboBox1.Text != "")
+                //{
+                //    listCombosNotNull.Add(parameterValue1);
+                //}
+
+                //if (comboBox2.Text != "")
+                //{
+                //    listCombosNotNull.Add(parameterValue2);
+                //}
+
+                //if (comboBox3.Text != "")
+                //{
+                //    listCombosNotNull.Add(parameterValue3); ;
+                //}
+
+
+
+                //foreach (string el in listCombosNotNull)
+                //{
+
+                //    if (listCombosNotNull.Contains(parameterValue1))
+                //    {
+                //       listChosen.Add(el);
+                //    }
+
+
+                //    if (listCombosNotNull.Contains(parameterValue2))
+                //    {
+                //        listChosen.Add(el);
+                //    }
+
+                //    if (listCombosNotNull.Contains(parameterValue3))
+                //    {
+                //        listChosen.Add(el);
+                //    }
+
+                //}
+
+                //string newValue = String.Join(" ,", listChosen);
+
+                //using (Transaction t = new Transaction(revitDoc, "Set Parameter name"))
+                //{
+                //    t.Start();
+                //    duct.LookupParameter("New").Set(newValue);
+                //    t.Commit();
+                //}
 
 
 
@@ -135,9 +207,9 @@ namespace CombineParametersWinForm
 
 
                 //foreach (string s in listParam) 
-                
+
                 //{
-                   
+
                 //    if (s != "" /*&& s != null*/)
                 //    {
                 //        List<string> listParamNotNull = new List<string> { s };
@@ -157,7 +229,7 @@ namespace CombineParametersWinForm
                 //}
 
 
-               
+
 
 
 
@@ -216,12 +288,6 @@ namespace CombineParametersWinForm
                 //{
                 //    parameterValue33 = "";
                 //}
-
-
-
-
-
-
 
 
 
