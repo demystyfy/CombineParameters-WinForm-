@@ -40,7 +40,8 @@ namespace CombineParametersWinForm
                     comboBox1.Items.Insert(0, parameterName);
                     comboBox2.Items.Insert(0, parameterName);
                     comboBox3.Items.Insert(0, parameterName);
-                }
+                    comboBox4.Items.Insert(0, parameterName);
+            }
 
             }
 
@@ -61,6 +62,8 @@ namespace CombineParametersWinForm
                 Parameter parameter1 = duct.LookupParameter(comboBox1.Text);
                 Parameter parameter2 = duct.LookupParameter(comboBox2.Text);
                 Parameter parameter3 = duct.LookupParameter(comboBox3.Text);
+                Parameter parameter4 = duct.LookupParameter(comboBox4.Text);
+
 
                 //don't try reading a null value 
 
@@ -100,7 +103,15 @@ namespace CombineParametersWinForm
                     //  TaskDialog.Show("paramer1", parameterValue1);
                 }
 
+                if (parameter4 != null)
+                {
+                    string parameterValue4 = parameter4.AsString();
+                    //add parameter value into a list
 
+                    if (parameterValue4 != "") parameterValues.Add(parameterValue4);
+
+                    //  TaskDialog.Show("paramer1", parameterValue1);
+                }
 
                 if (parameterValues.Count > 0) 
                 {
