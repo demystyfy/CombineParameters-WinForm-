@@ -50,7 +50,7 @@ namespace CombineParametersWinForm
 
             FilteredElementCollector collector = new FilteredElementCollector(revitDoc);
             // ElementCategoryFilter filter = new ElementCategoryFilter(BuiltInCategory.OST_PipeFitting);
-               ElementCategoryFilter filter = new ElementCategoryFilter(BuiltInCategory.OST_PipeFitting);
+               ElementCategoryFilter filter = new ElementCategoryFilter(BuiltInCategory.OST_Sprinklers);
             //Applying Filter
 
             IList<Element> ducts = collector.WherePasses(filter).WhereElementIsNotElementType().ToElements();
@@ -112,7 +112,7 @@ namespace CombineParametersWinForm
                     //    TaskDialog.Show("REVI", s);
                     //}
 
-                    string newValue = String.Join(" ,", parameterValues);
+                    string newValue = String.Join(", ", parameterValues);
 
                     using (Transaction t = new Transaction(revitDoc, "Set Parameter name"))
                     {

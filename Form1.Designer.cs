@@ -61,11 +61,11 @@ namespace CombineParametersWinForm
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(101, 243);
+            this.button1.Location = new System.Drawing.Point(89, 243);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(121, 23);
+            this.button1.Size = new System.Drawing.Size(167, 23);
             this.button1.TabIndex = 3;
-            this.button1.Text = "Combine Parameters";
+            this.button1.Text = "Объединить параметры";
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
@@ -73,6 +73,7 @@ namespace CombineParametersWinForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.SystemColors.InactiveCaption;
             this.ClientSize = new System.Drawing.Size(345, 316);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.comboBox3);

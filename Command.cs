@@ -30,8 +30,9 @@ namespace CombineParametersWinForm
 
             Form1 form = new Form1(doc);
             //Show Dialouge form 
+            form.Text = "Объединение параметров";
             form.ShowDialog();
-
+            
 
             return Result.Succeeded;
 

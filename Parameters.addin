@@ -9,6 +9,8 @@
 		<AddInId>
 			5C1F4426-F7BE-42EF-9B8B-C4BD0FE8CD91
 		</AddInId>
+		<Text>Объединить параметры</Text>
+		<Description>Задайте параметры и порядок объединения</Description>
 		<FullClassName>CombineParametersWinForm.Command</FullClassName>
 		<VendorId>Vendor ID</VendorId>
 		<VendorDescription>Vendor Description</VendorDescription>
