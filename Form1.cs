@@ -26,7 +26,24 @@ namespace CombineParametersWinForm
                 InitializeComponent();
 
                 this.revitDoc = doc;
-                //Create a list of the parameters you want your user to choose from 
+            //Create a list of the parameters you want your user to choose from 
+
+            List<string> stringParametersForComboBox0 = new List<string>
+
+            {
+
+                "OST_PipeAccessory",
+                "OST_Sprinklers",
+                "OST_MechanicalEquipment"
+            };
+
+            foreach (string Name in stringParametersForComboBox0)
+
+            {
+                comboBox0.Items.Insert(0, stringParametersForComboBox0);
+            }
+
+
                 List<string> stringParameters = new List<string>
             {
                 "GP_Производитель",
@@ -48,11 +65,11 @@ namespace CombineParametersWinForm
         private void button1_Click(object sender, EventArgs e)
         {
 
-            FilteredElementCollector collector = new FilteredElementCollector(revitDoc);
-            // ElementCategoryFilter filter = new ElementCategoryFilter(BuiltInCategory.OST_PipeFitting);
-               ElementCategoryFilter filter = new ElementCategoryFilter(BuiltInCategory.OST_PipeAccessory);
-            //Applying Filter
+            
 
+             FilteredElementCollector collector = new FilteredElementCollector(revitDoc);
+             ElementCategoryFilter filter = new ElementCategoryFilter(BuiltInCategory.OST_PipeAccessory);
+            //Applying Filter
             IList<Element> ducts = collector.WherePasses(filter).WhereElementIsNotElementType().ToElements();
 
             foreach (Element duct in ducts)
