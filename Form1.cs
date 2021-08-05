@@ -50,7 +50,7 @@ namespace CombineParametersWinForm
 
             FilteredElementCollector collector = new FilteredElementCollector(revitDoc);
             // ElementCategoryFilter filter = new ElementCategoryFilter(BuiltInCategory.OST_PipeFitting);
-               ElementCategoryFilter filter = new ElementCategoryFilter(BuiltInCategory.OST_Sprinklers);
+               ElementCategoryFilter filter = new ElementCategoryFilter(BuiltInCategory.OST_PipeAccessory);
             //Applying Filter
 
             IList<Element> ducts = collector.WherePasses(filter).WhereElementIsNotElementType().ToElements();
